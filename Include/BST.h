@@ -1,3 +1,4 @@
+#pragma once
 class BST
 {
     virtual bool isEmpty() = 0;
