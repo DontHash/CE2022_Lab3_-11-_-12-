@@ -26,25 +26,28 @@ void LinkedListBST::add(int data)
     {
         Node *newNode;
         Node *temp = ROOT;
-        if (data > temp->info)
+        while (temp != nullptr)
         {
-            if (temp->Right == nullptr)
+            if (data > temp->info)
             {
-                newNode->Parent = temp;
-                newNode->info = data;
+                if (temp->Right == nullptr)
+                {
+                    newNode->Parent = temp;
+                    newNode->info = data;
+                }
+                else
+                    temp = temp->Right;
             }
-            else
-                temp = temp->Right;
-        }
-        else if (data < temp->info)
-        {
-            if (temp->Left == nullptr)
+            else if (data < temp->info)
             {
-                newNode->Parent = temp;
-                newNode->info = data;
+                if (temp->Left == nullptr)
+                {
+                    newNode->Parent = temp;
+                    newNode->info = data;
+                }
+                else
+                    temp = temp->Left;
             }
-            else
-                temp = temp->Left;
         }
     }
 }
