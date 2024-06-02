@@ -8,9 +8,9 @@ private:
     Node *ROOT;
 
 public:
-    LinkedListBST(){};
+    LinkedListBST();
     bool isEmpty();
     void add(int data);
     void remove(int data);
-    void search(int data);
+    bool search(int data);
 };
